@@ -19,7 +19,7 @@ def validateUserName(userName):
 
 
 def validatePassword(userPassword):
-    if userPassword == "Hello":
+    if userPassword == "password":
         print("Correct")
 
 
