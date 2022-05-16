@@ -8,9 +8,10 @@ from UserInfo import userInfo
 credentialFile = "userCredentials.json"
 numAttempts = 3
 isNewUser = True
+isRunning = True
+
+
 # Function to track and display attempt information
-
-
 def checkNumAttempts():
     if numAttempts > 0:
         print("{} attempts remaining".format(numAttempts))
@@ -36,7 +37,7 @@ def exitClient():
     quit()
 
 
-while True:
+while isRunning:
     print()
     print("Please enter a selection")
     print("1. Login")
@@ -61,9 +62,7 @@ while True:
                 numAttempts -= 1
                 checkNumAttempts()
     elif userSelection == "2":
-        while isNewUser:
-            if registerNewUser():
-                isNewUser = False
+        registerNewUser()
 
     else:
         exitClient()
